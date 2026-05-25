@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Widock Trial';
+    src: url('Widock TRIAL Bold.otf') format('opentype');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gothic60';
+    src: url('Gothic60-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    background: #f3f3f3;
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    color: #111;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+button, input, select, textarea {
+    font-size: 16px;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ===== CATALOG ===== */
+.catalog {
+    padding: 0 0 60px 0;
+}
+
+.catalog h1 {
+    font-family: 'Widock Trial', 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 60px;
+    margin: 20px 0 40px;
+    letter-spacing: 2px;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-img {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card-img img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img img {
+    transform: scale(1.02);
+}
+
+.card p {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 10px 0 20px;
+    text-transform: lowercase;
+    color: #111;
+}
+
+.card p::first-letter {
+    text-transform: uppercase;
+}
+
+.card button {
+    background: #a6a86c;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+    font-family: 'Gothic60', sans-serif;
+}
+
+.card button:hover {
+    background: #8b8d5a;
+}
+
+.no-results {
+    text-align: center;
+    font-size: 18px;
+    padding: 40px;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+.pagination {
+    text-align: center;
+    margin: 50px 0 30px;
+}
+
+.pagination span {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
+    display: inline-block;
+    margin: 0 5px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.pagination span:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.pagination span.active {
+    background-color: #a6a86c;
+    color: white;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #e6e6e6;
+    padding: 40px 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 70px;
+}
+
+.footer-links .col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 14px;
+    color: #111;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #a6a86c;
+}
+
+/* ===== АДАПТАЦИЯ ===== */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .catalog h1 {
+        font-size: 48px;
+        margin: 20px 0 30px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .card {
+        max-width: 350px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .pagination span {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .footer-links .col {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog h1 {
+        font-size: 36px;
+    }
+
+    .search-box {
+        width: 90%;
+        max-width: 280px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+    .card button {
+        padding: 10px 25px;
+        font-size: 13px;
+    }
+
+    .pagination span {
+        padding: 5px 10px;
+        font-size: 12px;
+        margin: 0 3px;
+    }
+}

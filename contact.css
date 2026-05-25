@@ -1,0 +1,273 @@
+/* contact.css - стили для страницы "Контакты" */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Widock Trial';
+    src: url('Widock TRIAL Bold.otf') format('opentype');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gothic60';
+    src: url('Gothic60-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+body {
+    background: #f3f3f3;
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+/* ===== КОНТАКТНАЯ СТРАНИЦА ===== */
+.contacts-page {
+    padding: 20px 0 80px;
+    flex: 1;
+}
+
+.contacts-grid {
+    display: flex;
+    gap: 60px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.contacts-info {
+    flex: 1;
+}
+
+.page-title {
+    font-family: 'Widock Trial', 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 60px;
+    letter-spacing: 2px;
+    margin: 0 0 30px 0;
+    color: #111;
+    text-align: left;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.contact-label {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #6e6e6e;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.contact-label .emoji-label {
+    font-size: 16px;
+}
+
+.contact-value {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.contact-value a {
+    text-decoration: none;
+    color: #111;
+    border-bottom: 1px solid #ccc;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.contact-value a:hover {
+    color: #a6a86c;
+    border-color: #a6a86c;
+}
+
+.contacts-map-card {
+    flex: 0.9;
+    border-radius: 0 24px 0 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    border: 1px solid #e8e8e8;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contacts-map-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.map-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.contacts-map-card:hover .map-image img {
+    transform: scale(1.02);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #e6e6e6;
+    padding: 40px 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    font-family: 'Widock Trial', 'Manrope', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #111;
+    display: inline-block;
+}
+
+.footer-links {
+    display: flex;
+    gap: 70px;
+}
+
+.footer-links .col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 13px;
+    color: #3a3a3a;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #a6a86c;
+}
+
+/* ===== АДАПТАЦИЯ ===== */
+@media (max-width: 1200px) {
+    .container {
+        width: 100%;
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .contacts-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .page-title {
+        font-size: 42px;
+        text-align: center;
+    }
+
+    .contact-item {
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-value {
+        justify-content: center;
+        font-size: 18px;
+    }
+
+    .contacts-map-card {
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .footer-links .col {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 32px;
+    }
+
+    .contact-value {
+        font-size: 16px;
+    }
+
+    .search-box {
+        width: 90%;
+        max-width: 280px;
+    }
+}

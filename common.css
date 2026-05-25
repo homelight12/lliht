@@ -1,0 +1,399 @@
+/* common.css - единые стили для всех страниц */
+
+/* ===== ОСНОВНЫЕ СТИЛИ ШАПКИ ===== */
+.header {
+    padding: 25px 0 35px;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-family: 'Widock Trial', 'Manrope', sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 24px;
+    text-decoration: none;
+    color: #111;
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+/* Обертка для навигации */
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Ссылки меню */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 14px;
+    color: #111;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: #a6a86c;
+}
+
+.nav-links a.active {
+    color: #a6a86c;
+}
+
+/* Иконки */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    color: #111;
+}
+
+.icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: #111;
+    stroke-width: 1.8;
+    fill: none;
+    transition: all 0.3s ease;
+}
+
+.icon:not(.icon-favorite):hover svg {
+    stroke: #a6a86c;
+}
+
+.icon-favorite:hover svg {
+    stroke: #FF6161 !important;
+    fill: #FF6161 !important;
+}
+
+/* Поиск */
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #111;
+    border-radius: 20px;
+    padding: 6px 14px;
+    width: 320px;
+    transition: border-color 0.3s ease;
+}
+
+.search-box:focus-within {
+    border-color: #a6a86c;
+}
+
+.search-box svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    stroke: #111;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 14px;
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    color: #111;
+}
+
+.search-box input::placeholder {
+    color: #999;
+}
+
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ (до 768px) ===== */
+@media (max-width: 768px) {
+    .container {
+        width: 100% !important;
+        padding: 0 15px !important;
+    }
+    
+    .header {
+        padding: 15px 0 20px !important;
+    }
+    
+    .header-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+    
+    .logo {
+        order: 1 !important;
+        font-size: 24px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .nav-wrapper {
+        order: 2 !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+    }
+    
+    .nav-icons {
+        order: 1 !important;
+        justify-content: center !important;
+        gap: 25px !important;
+    }
+    
+    .nav-links {
+        order: 2 !important;
+        justify-content: center !important;
+        flex-wrap: nowrap !important;
+        gap: 16px !important;
+        width: 100% !important;
+    }
+    
+    .nav-links a {
+        font-size: 15px !important;
+        white-space: nowrap !important;
+        padding: 0 2px !important;
+    }
+    
+    /* ПОИСК - ТАКОЙ ЖЕ ДЛИНЫ КАК МЕНЮ */
+    .search-wrapper {
+        order: 4 !important;
+        margin-top: 20px !important;
+        margin-bottom: 5px !important;
+        width: 100% !important;
+    }
+    
+    .search-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 8px 14px !important;
+        border: 1.5px solid #111 !important;
+        border-radius: 20px !important;
+    }
+    
+    .search-box svg {
+        display: inline-block !important;
+        width: 16px !important;
+        height: 16px !important;
+        margin-right: 8px !important;
+    }
+    
+    .search-box input {
+        font-size: 14px !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        outline: none !important;
+    }
+    
+    .search-box input::placeholder {
+        color: #999 !important;
+    }
+    
+    .icon svg,
+    .icon-favorite svg,
+    .cart-icon svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+    
+    /* ===== ОТСТУПЫ ДЛЯ ЗАГОЛОВКОВ ===== */
+    .hero {
+        margin-top: 10px !important;
+    }
+    
+    .hero h1 {
+        margin-top: 0 !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .hero-text {
+        margin-top: -25px !important;
+        margin-bottom: 20px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .catalog {
+        margin-top: 30px !important;
+    }
+    
+    .catalog h2 {
+        margin-top: 20px !important;
+    }
+    
+    .about-title,
+    .delivery-title,
+    .cart-title,
+    .favorites-title,
+    .profile-title,
+    .catalog h1,
+    .page-title,
+    .contacts-page .page-title {
+        margin-top: 20px !important;
+    }
+    
+    /* ===== ПОДВАЛ - ТРИ КОЛОНКИ В РЯД ===== */
+    .footer {
+        padding: 30px 0 !important;
+    }
+    
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 25px !important;
+    }
+    
+    .footer-links {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 40px !important;
+        width: 100% !important;
+    }
+    
+    .footer-links .col {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 8px !important;
+        flex: 0 1 auto !important;
+    }
+    
+    .footer-links a {
+        font-size: 13px !important;
+        text-align: center !important;
+    }
+    
+    /* ===== КНОПКА ПЕРЕЙТИ - ЧЕРНАЯ НАДПИСЬ ===== */
+    .card button,
+    .card button span,
+    .card button * {
+        color: #000000 !important;
+        background-color: #a6a86c !important;
+    }
+}
+
+/* ===== ДЛЯ ЭКРАНОВ 480px И МЕНЬШЕ ===== */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px !important;
+    }
+    
+    .logo {
+        font-size: 22px !important;
+    }
+    
+    .nav-icons {
+        gap: 20px !important;
+    }
+    
+    .nav-links {
+        gap: 12px !important;
+    }
+    
+    .nav-links a {
+        font-size: 13px !important;
+        padding: 0 1px !important;
+    }
+    
+    .icon svg,
+    .icon-favorite svg,
+    .cart-icon svg {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    
+    .search-wrapper {
+        margin-top: 18px !important;
+    }
+    
+    .search-box {
+        padding: 6px 12px !important;
+    }
+    
+    .search-box input {
+        font-size: 13px !important;
+    }
+    
+    .hero {
+        margin-top: 5px !important;
+    }
+    
+    .catalog {
+        margin-top: 20px !important;
+    }
+    
+    .about-title,
+    .delivery-title,
+    .cart-title,
+    .favorites-title,
+    .profile-title,
+    .catalog h1,
+    .page-title {
+        margin-top: 15px !important;
+    }
+    
+    /* Подвал на маленьких экранах */
+    .footer-links {
+        gap: 25px !important;
+    }
+    
+    .footer-links a {
+        font-size: 11px !important;
+    }
+}
+
+/* ===== ДЛЯ ЭКРАНОВ 360px И МЕНЬШЕ ===== */
+@media (max-width: 360px) {
+    .nav-links {
+        gap: 8px !important;
+    }
+    
+    .nav-links a {
+        font-size: 12px !important;
+    }
+    
+    .footer-links {
+        gap: 15px !important;
+    }
+    
+    .footer-links a {
+        font-size: 10px !important;
+    }
+}
+
+/* ===== ДЛЯ ПЛАНШЕТОВ ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        width: 100% !important;
+        padding: 0 30px !important;
+    }
+}
